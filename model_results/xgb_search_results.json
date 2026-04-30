@@ -1,0 +1,63 @@
+{
+    "best_cv_f1_score": 0.8552033566706131,
+    "best_parameters": {
+        "xgb__subsample": 0.9,
+        "xgb__scale_pos_weight": 2.5,
+        "xgb__reg_lambda": 10,
+        "xgb__reg_alpha": 0.1,
+        "xgb__n_estimators": 500,
+        "xgb__min_child_weight": 3,
+        "xgb__max_depth": 6,
+        "xgb__max_bin": 64,
+        "xgb__learning_rate": 0.1,
+        "xgb__gamma": 0.1,
+        "xgb__colsample_bytree": 0.7,
+        "features__word_tfidf__sublinear_tf": true,
+        "features__word_tfidf__ngram_range": [
+            1,
+            1
+        ],
+        "features__word_tfidf__min_df": 2,
+        "features__word_tfidf__max_features": 20000,
+        "features__word_tfidf__max_df": 1.0,
+        "features__transformer_weights": {
+            "word_tfidf": 1.0,
+            "char_tfidf": 0.5
+        },
+        "features__char_tfidf__sublinear_tf": true,
+        "features__char_tfidf__ngram_range": [
+            3,
+            5
+        ],
+        "features__char_tfidf__min_df": 2,
+        "features__char_tfidf__max_features": 20000,
+        "features__char_tfidf__max_df": 0.95
+    },
+    "classification_report": {
+        "0": {
+            "precision": 0.9501557632398754,
+            "recall": 0.715962441314554,
+            "f1-score": 0.8165997322623829,
+            "support": 1278.0
+        },
+        "1": {
+            "precision": 0.7724137931034483,
+            "recall": 0.9625,
+            "f1-score": 0.8570434782608696,
+            "support": 1280.0
+        },
+        "accuracy": 0.8393275996872557,
+        "macro avg": {
+            "precision": 0.8612847781716618,
+            "recall": 0.839231220657277,
+            "f1-score": 0.8368216052616262,
+            "support": 2558.0
+        },
+        "weighted avg": {
+            "precision": 0.8612152934296226,
+            "recall": 0.8393275996872557,
+            "f1-score": 0.8368374159520089,
+            "support": 2558.0
+        }
+    }
+}

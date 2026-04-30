@@ -1,0 +1,67 @@
+{
+    "model_type": "LinearSVC",
+    "best_cv_f1_score": 0.8456147307785997,
+    "best_parameters": {
+        "svm__tol": 0.001,
+        "svm__penalty": "l1",
+        "svm__max_iter": 10000,
+        "svm__loss": "squared_hinge",
+        "svm__dual": false,
+        "svm__class_weight": null,
+        "svm__C": 0.3,
+        "features__word_tfidf__sublinear_tf": true,
+        "features__word_tfidf__ngram_range": [
+            1,
+            1
+        ],
+        "features__word_tfidf__min_df": 5,
+        "features__word_tfidf__max_features": 50000,
+        "features__word_tfidf__max_df": 0.9,
+        "features__transformer_weights": {
+            "word_tfidf": 1.0,
+            "char_tfidf": 1.25
+        },
+        "features__char_tfidf__sublinear_tf": true,
+        "features__char_tfidf__ngram_range": [
+            3,
+            5
+        ],
+        "features__char_tfidf__min_df": 2,
+        "features__char_tfidf__max_features": 50000,
+        "features__char_tfidf__max_df": 0.9
+    },
+    "classification_report": {
+        "0": {
+            "precision": 0.8951686417502279,
+            "recall": 0.7683881064162754,
+            "f1-score": 0.8269473684210527,
+            "support": 1278.0
+        },
+        "1": {
+            "precision": 0.7973990417522245,
+            "recall": 0.91015625,
+            "f1-score": 0.8500547245530828,
+            "support": 1280.0
+        },
+        "accuracy": 0.8393275996872557,
+        "macro avg": {
+            "precision": 0.8462838417512262,
+            "recall": 0.8392721782081377,
+            "f1-score": 0.8385010464870677,
+            "support": 2558.0
+        },
+        "weighted avg": {
+            "precision": 0.8462456206409845,
+            "recall": 0.8393275996872557,
+            "f1-score": 0.8385100798553758,
+            "support": 2558.0
+        }
+    },
+    "decision_scores_note": "These are LinearSVC margin scores, not probabilities.",
+    "decision_scores_summary": {
+        "min": -5.096419115461348,
+        "max": 6.718177335968334,
+        "mean": -0.08835384211671009,
+        "std": 1.0428238033948145
+    }
+}
