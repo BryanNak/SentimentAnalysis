@@ -1,0 +1,11 @@
+torch
+transformers
+datasets
+optuna
+scikit-learn
+xgboost
+pandas
+numpy
+matplotlib
+requests
+joblib

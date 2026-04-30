@@ -1,3 +1,51 @@
 $env:BLUESKY_HANDLE="your.handle.bsky.social"
 $env:BLUESKY_APP_PASSWORD="xxxx-xxxx-xxxx-xxxx"
 python .\query_bluesky.py --keyword "climate change" --start-date 2025-01-01 --end-date 2025-01-31 --output-path climate_change_jan_2025.csv --output-format csv --lang en --page-size 100 --window-days 1 --parallel-workers 3 --sleep-seconds 0.75 --authenticated
+============================================================
+BLUESKY POST COLLECTOR - USAGE GUIDE
+============================================================
+NOTE: The example above is just that -- an example. Replace the keyword,
+dates, output path, and other flags with your own values.
+The two $env: lines at the top set environment variables for authenticated
+mode (higher rate limits, better coverage). They are only needed if you
+use the --authenticated flag. You can get an App Password from:
+  bsky.app → Settings → Privacy and Security → App Passwords
+============================================================
+FLAGS
+============================================================
+Required:
+  --keyword          Keyword or phrase to search for (e.g. "AI policy")
+  --start-date       Inclusive start date in YYYY-MM-DD format (UTC)
+  --end-date         Inclusive end date in YYYY-MM-DD format (UTC)
+  --output-path      File path to write results to (e.g. output.csv)
+  --output-format    Output format. Choices: csv or json
+Optional:
+  --max-results      Cap on the number of unique records after deduplication.
+                     Useful for quick test runs. No default (unlimited).
+  --page-size        Number of posts returned per API request (1-100).
+                     Default: 100 (max).
+  --lang             Filter results to a single language code (e.g. en).
+                     Default: none (all languages).
+  --sleep-seconds    Minimum pause between HTTP requests to avoid rate limits.
+                     Default: 1.0
+  --timeout-seconds  Per-request timeout in seconds.
+                     Default: 30.0
+  --max-retries      Maximum retry attempts for recoverable failures.
+                     Default: 5
+  --backoff-base-seconds  Base delay for exponential backoff on retries.
+                     Default: 2.0
+  --window-days      Splits the overall date range into smaller search
+                     windows. Smaller windows can improve coverage on
+                     dense queries.
+                     Default: 7
+  --parallel-workers Number of date windows to search concurrently.
+                     Default: 1 (sequential).
+  --authenticated    Enable authenticated mode for higher rate limits
+                     and better access. Requires BLUESKY_HANDLE and
+                     BLUESKY_APP_PASSWORD env vars (or --auth-identifier
+                     and --auth-password flags).
+                     Default: off (public read-only mode).
+  --auth-identifier  Bluesky handle or identifier (if not using env var).
+  --auth-password    App password (if not using env var or interactive prompt).
+  --auth-service     Auth service base URL. Default: https://bsky.social
+  --verbose          Enable debug-level logging for troubleshooting.
